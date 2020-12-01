@@ -9,6 +9,8 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 def list_drive(update,context):
     try:
         search = update.message.text.split(' ',maxsplit=1)[1]
+        if "'"in search:
+            search = search.replace("'", "\\'")
     except IndexError:
         sendMessage('send a search key along with command', context.bot, update)
         return
