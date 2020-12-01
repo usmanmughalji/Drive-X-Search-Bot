@@ -3,7 +3,6 @@ import os
 import time
 
 import telegram.ext as tg
-from dotenv import load_dotenv
 
 from telegraph import Telegraph
 
@@ -16,19 +15,11 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     handlers=[logging.FileHandler('log.txt'), logging.StreamHandler()],
                     level=logging.INFO)
 
-load_dotenv('config.env')
 
 def getConfig(name: str):
     return os.environ[name]
 
 LOGGER = logging.getLogger(__name__)
-
-try:
-    if bool(getConfig('_____REMOVE_THIS_LINE_____')):
-        logging.error('The README.md file there to be read! Exiting now!')
-        exit()
-except KeyError:
-    pass
 
 BOT_TOKEN = None
 
