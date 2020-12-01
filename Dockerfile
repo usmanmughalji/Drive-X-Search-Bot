@@ -8,7 +8,7 @@ RUN apt-get -qq update && \
     rm -rf /var/lib/apt/lists/* && \
     apt-add-repository non-free && \
     apt-get -qq update && \
-    apt-get -qq install -y python3 python3-pip && \
+    apt-get -qq install -y python3 python3-pip locales && \
     apt-get purge -y software-properties-common
 
 COPY authorized_chats.txt .
