@@ -72,6 +72,12 @@ class GoogleDriveHelper:
                                                orderBy='modifiedTime desc').execute()["files"]
         return response
 
+    def escapes(self, str):
+        chars = ['\\', "'", '"', r'\a', r'\b', r'\f', r'\n', r'\r', r'\t']
+        for char in chars:
+            str = str.replace(char, '\\'+char)
+        return str
+
     def edit_telegraph(self):
         nxt_page = 1 
         prev_page = 0
@@ -91,6 +97,12 @@ class GoogleDriveHelper:
                                  html_content=content)
         return
 
+    def escapes(self, str):
+        chars = ['\\', "'", '"', r'\a', r'\b', r'\f', r'\n', r'\r', r'\t']
+        for char in chars:
+            str = str.replace(char, '\\'+char)
+        return str
+    
     def drive_list(self, fileName):
         msg = ''
         INDEX = -1
