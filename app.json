@@ -1,0 +1,37 @@
+{
+    "name": "Drive-X-Search-Bot",
+    "description": "Telegram Bot Which Search Files From Our G-Drive",
+    "logo": "https://telegra.ph/file/e15e9ac9c5885b015e3ab.jpg",
+    "keywords": [
+      "telegram",
+      "bot",
+      "drive",
+      "python"
+    ],
+    "repository": "https://github.com/usmanmughalji/Drive-X-Search-Bot.git",
+    "website": "https://github.com/usmanmughalji/Drive-X-Search-Bot/tree/master",
+    "success_url": "https://github.com/usmanmughalji/Drive-X-Search-Bot/blob/master/README.md",
+    "stack": "container",
+    "env": {
+      "ENV": {
+      "description": "Setting this to ANYTHING will enable webhooks when in env mode",
+      "value": "ANYTHING"
+    },
+      "BOT_TOKEN": {
+        "description": "The telegram bot token that you get from @BotFather.",
+        "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "The Telegram user ID (not username) of the owner of the bot.",
+        "value": "",
+        "required": true
+      },
+      "TELEGRAPH_TOKEN": {
+        "description": "Open this link to generate telegraph token ==> https://telegraph-token.sonywegas.repl.run",
+        "value": "",
+        "required": true
+      }
+
+    }
+}
