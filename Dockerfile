@@ -6,6 +6,8 @@ RUN chmod 777 /usr/src/app
 RUN apt-get -qq update && \
     apt-get -qq install -y python3 python3-pip
 
+COPY authorized_chats.txt .
+COPY token.pickle .
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN locale-gen en_US.UTF-8
