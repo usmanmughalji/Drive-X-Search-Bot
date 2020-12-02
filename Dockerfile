@@ -11,6 +11,7 @@ RUN apt-get -qq update && \
     apt-get -qq install -y python3 python3-pip locales && \
     apt-get purge -y software-properties-common
 
+COPY drive_folder .
 COPY authorized_chats.txt .
 COPY token.pickle .
 COPY requirements.txt .
