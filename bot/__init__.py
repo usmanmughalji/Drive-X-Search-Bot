@@ -33,6 +33,14 @@ if os.path.exists('authorized_chats.txt'):
             AUTHORIZED_CHATS.add(int(line.split()[0]))
 
 try:
+    achats = getConfig('AUTHORIZED_CHATS')
+    achats = achats.split(" ")
+    for chats in achats:
+        AUTHORIZED_CHATS.add(int(chats))
+except:
+    pass
+
+try:
     BOT_TOKEN = getConfig('BOT_TOKEN')
     OWNER_ID = int(getConfig('OWNER_ID'))
     telegraph_token = getConfig('TELEGRAPH_TOKEN')
