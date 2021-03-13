@@ -1,6 +1,8 @@
 import logging
 import os
 import time
+import random
+import string
 
 import telegram.ext as tg
 
@@ -43,10 +45,18 @@ except:
 try:
     BOT_TOKEN = getConfig('BOT_TOKEN')
     OWNER_ID = int(getConfig('OWNER_ID'))
-    telegraph_token = getConfig('TELEGRAPH_TOKEN')
 except KeyError as e:
     LOGGER.error("One or more env variables missing! Exiting now")
     exit(1)
+
+#Generate Telegraph Token
+sname = ''.join(random.SystemRandom().choices(string.ascii_letters, k=8))
+LOGGER.info("Generating Telegraph Token using '" + sname + "' name")
+telegraph = Telegraph()
+telegraph.create_account(short_name=sname)
+telegraph_token = telegraph.get_access_token()
+LOGGER.info("Telegraph Token Generated: '" + telegraph_token + "'")
+
 
 DRIVE_NAME = []
 DRIVE_ID = []

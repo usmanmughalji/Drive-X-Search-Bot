@@ -12,7 +12,6 @@ RUN apt-get -qq update && \
     apt-get purge -y software-properties-common
 
 COPY drive_folder .
-COPY authorized_chats.txt .
 COPY token.pickle .
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt && \
