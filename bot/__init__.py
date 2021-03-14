@@ -79,7 +79,7 @@ if os.path.exists('drive_folder'):
 if DRIVE_ID :
     pass
 else :
-    LOGGER.error("The README.md file there to be read! Exiting now!")
+    LOGGER.error("Please run python3 driveid.py - Exiting now!")
     exit(1)
 
 telegra_ph = Telegraph(access_token=telegraph_token)
