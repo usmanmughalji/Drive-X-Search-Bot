@@ -28,10 +28,6 @@ sudo pacman -S docker python
 ```
 cp config_sample.env config.env
 ```
-- Remove the first line saying:
-```
-_____REMOVE_THIS_LINE_____=True
-```
 Fill up rest of the fields. Meaning of each fields are discussed below:
 - **BOT_TOKEN** : The telegram bot token that you get from @BotFather
 - **OWNER_ID** : The Telegram user ID (not username) of the owner of the bot
