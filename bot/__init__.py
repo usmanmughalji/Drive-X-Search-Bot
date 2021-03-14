@@ -3,6 +3,7 @@ import os
 import time
 import random
 import string
+from dotenv import load_dotenv
 
 import telegram.ext as tg
 
@@ -17,6 +18,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     handlers=[logging.FileHandler('log.txt'), logging.StreamHandler()],
                     level=logging.INFO)
 
+load_dotenv('config.env')
 
 def getConfig(name: str):
     return os.environ[name]
