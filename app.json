@@ -31,13 +31,12 @@
         "description": "Fill User ID and Chat ID of you want to authorize and adding for more than one use space",
         "value": "",
         "required": false
-      },
-      "formation": {
-        "worker": {
-          "quantity": 1,
-          "size": "free"
-        }
       }
-
+    },
+    "formation": {
+      "worker": {
+        "quantity": 1,
+        "size": "free"
+      }
     }
 }
