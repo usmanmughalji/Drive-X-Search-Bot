@@ -103,11 +103,6 @@ class GoogleDriveHelper:
                                  html_content=content)
         return
 
-    #def escapes(self, str):
-    #    chars = ['\\', "'", '"', r'\a', r'\b', r'\f', r'\n', r'\r', r'\t']
-    #    for char in chars:
-    #        str = str.replace(char, '\\'+char)
-    #    return str
     
     def drive_list(self, fileName):
         fileName = self.escapes(str(fileName))
