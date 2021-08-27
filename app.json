@@ -1,11 +1,12 @@
 {
     "name": "Drive-X-Search-Bot",
     "description": "Telegram Bot Which Search Files From Our G-Drive",
-    "logo": "https://telegra.ph/file/e15e9ac9c5885b015e3ab.jpg",
+    "logo": "https://telegra.ph/file/2360336321c95fc2ce7d4.png",
     "keywords": [
       "telegram",
       "bot",
       "drive",
+      "search",
       "python"
     ],
     "repository": "https://github.com/usmanmughalji/Drive-X-Search-Bot.git",
@@ -13,12 +14,33 @@
     "success_url": "https://github.com/usmanmughalji/Drive-X-Search-Bot/blob/master/README.md",
     "stack": "container",
     "env": {
-      "ENV": {
-      "description": "Setting this to ANYTHING will enable webhooks when in env mode",
-      "value": "ANYTHING"
-    },
+      "AUTHORIZED_CHATS": {
+        "description": "Fill User ID and Chat ID of you want to authorize, Seprate them with space.",
+        "value": "",
+        "required": false
+      },
       "BOT_TOKEN": {
         "description": "The telegram bot token that you get from @BotFather.",
+        "value": "",
+        "required": true
+      },
+      "BOT_SOURCE_CODE": {
+        "description": "Add your bot source code link here! or Leave It Blank",
+        "value": "",
+        "required": false
+      },
+      "DRIVE_NAME": {
+        "description": "Add Drive Folder Names, Seprate them with comma(,).",
+        "value": "",
+        "required": true
+      },
+      "DRIVE_ID": {
+        "description": "Add Gdrive Folder IDs, Seprate them with space.",
+        "value": "",
+        "required": true
+      },
+      "INDEX_URL": {
+        "description": "Add Index Links, Seprate them with space.",
         "value": "",
         "required": true
       },
@@ -27,12 +49,22 @@
         "value": "",
         "required": true
       },
-      "AUTHORIZED_CHATS": {
-        "description": "Fill User ID and Chat ID of you want to authorize and adding for more than one use space",
+      "TELEGRAPH_TOKEN": {
+        "description": "Optional - Add your Telegraph Token.",
+        "value": "",
+        "required": false
+      },
+      "TELEGRAPH_CHANGES": {
+        "description": "Add any name here or your bot name for changes on telegraph page! or Leave It Blank",
         "value": "",
         "required": false
       }
     },
+    "addons": [
+      {
+        "plan": "heroku-postgresql"
+      }
+    ],
     "formation": {
       "worker": {
         "quantity": 1,
