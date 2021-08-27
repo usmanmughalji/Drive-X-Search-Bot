@@ -10,8 +10,8 @@ Deploying is pretty much straight forward and is divided into several steps as f
 
 - Clone this repo:
 ```
-git clone https://github.com/usmanmughalji/Drive-X-Search-Bot search-bot/
-cd mirrorbot
+git clone git@github.com:usmanmughalji/Drive-X-Search-Bot.git search-bot
+cd search-bot
 ```
 
 - Install requirements
