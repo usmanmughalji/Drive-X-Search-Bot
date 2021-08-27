@@ -2,7 +2,7 @@
 <p><a href="https://dashboard.heroku.com/new?template=https://github.com/usmanmughalji/Drive-X-Search-Bot/tree/master"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"/></a></p>
 
 # What is this repo about?
-This is a telegram bot writen in python for searching files in Drive.
+This is a telegram bot written in python for searching files in Drive.
 
 # How to deploy?
 Deploying is pretty much straight forward and is divided into several steps as follows:
