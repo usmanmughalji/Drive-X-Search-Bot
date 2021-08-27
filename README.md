@@ -1,5 +1,5 @@
 ## Deploy Here!
-<p><a href="https://dashboard.heroku.com/new?template=https://github.com/usmanmughalji/hmmg/tree/master"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"/></a></p>
+<p><a href="https://dashboard.heroku.com/new?template=https://github.com/usmanmughalji/Drive-X-Search-Bot/tree/master"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"/></a></p>
 
 # What is this repo about?
 This is a telegram bot writen in python for searching files in Drive.
@@ -82,7 +82,7 @@ Fill up rest of the fields. Meaning of each fields are discussed below:
     
 - `AUTHORIZED_CHATS` : Fill user_id and chat_id (not username) of you want to authorize, Seprate them with space Examples: `-0123456789 -1122334455 6915401739`
     
-- `DATABASE_URL` : Default `DATABASE_URL` from heroku will set itself or You can create Database URL. See [Generate Database](https://github.comusmanmughalji/Drive-X-Search-Bot/tree/master#generate-database) (**NOTE**: If you use database you can save your auth id permanent using `/auth` command)
+- `DATABASE_URL` : Default `DATABASE_URL` from heroku will set itself or You can create Database URL. See [Generate Database](https://github.com/usmanmughalji/Drive-X-Search-Bot#generate-database) (**NOTE**: If you use database you can save your auth id permanent using `/auth` command)
 
 - `BOT_SOURCE_CODE` : Add your bot source code link here or any link you want to add here.
 
