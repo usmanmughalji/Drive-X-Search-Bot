@@ -12,21 +12,25 @@ from bot.helper.telegram_helper.bot_utils import get_readable_time
 from bot.helper.telegram_helper import button_builder
 
 def start(update, context):
-    start_string = f'''
-<b>This Bot Can Search In All Of Your Google Drives!</b>
-'''
     buttons = button_builder.ButtonMaker()
     buttons.buildbutton("Repo", "https://github.com/usmanmughalji/Drive-X-Search-Bot")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(1))
     uptime = get_readable_time((time.time() - botStartTime))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id,update.message.chat.username,update.message.text))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
-        if update.message.chat.type == "private" :
+        if update.message.chat.type == "private":
             sendMessage(f"Hey I'm Alive 🙂 \n\nSince: {uptime} \n\nWelcome to <b>Search-X Bot</b>", context.bot, update)
-        else :
+        else:
+            start_string = '\x1f<b>This Bot Can Search In All Of Your Google Drives!</b>\x1f'
+
             sendMessage(start_string, context.bot, update)
-    else :
-        sendMarkup(f"Oops! not a Authorized user.\n\nPlease Deploy Your Own <b>Drive-X-Search-Bot</b>.", context.bot, update, reply_markup)
+    else:
+        sendMarkup(
+            'Oops! not a Authorized user.\n\nPlease Deploy Your Own <b>Drive-X-Search-Bot</b>.',
+            context.bot,
+            update,
+            reply_markup,
+        )
 
 botcmds = [
         (f'{BotCommands.StartCommand}','Alive or Not'),

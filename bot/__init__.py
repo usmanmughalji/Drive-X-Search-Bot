@@ -126,9 +126,9 @@ for envs in ["DRIVE_NAME", "DRIVE_ID", "INDEX_URL"]:
         print(f"Please Fill Following Var In The config.env \n\n{envs}")
         exit(1)
 
-DRIVE_NAME = list(set(x for x in getConfig('DRIVE_NAME').split(",")))
-DRIVE_ID = list(set(x for x in getConfig('DRIVE_ID').split()))
-INDEX_URL = list(set(x for x in getConfig('INDEX_URL').split()))
+DRIVE_NAME = list(set(getConfig('DRIVE_NAME').split(",")))
+DRIVE_ID = list(set(getConfig('DRIVE_ID').split()))
+INDEX_URL = list(set(getConfig('INDEX_URL').split()))
 
 updater = tg.Updater(token=BOT_TOKEN)
 bot = updater.bot

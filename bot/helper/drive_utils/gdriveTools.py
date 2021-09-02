@@ -70,16 +70,21 @@ class GoogleDriveHelper:
     
     def drive_query(self, parent_id, fileName):
         fileName = self.escapes(str(fileName))
-        gquery = " and ".join([f"name contains '{x}'" for x in fileName.split()])
+        gquery = " and ".join(f"name contains '{x}'" for x in fileName.split())
         query = f"'{parent_id}' in parents and ({gquery})"
-        response = self.__service.files().list(supportsTeamDrives=True,
-                                               includeTeamDriveItems=True,
-                                               q=query,
-                                               spaces='drive',
-                                               pageSize=200,
-                                               fields='files(id, name, mimeType, size)',
-                                               orderBy='modifiedTime desc').execute()["files"]
-        return response
+        return (
+            self.__service.files()
+            .list(
+                supportsTeamDrives=True,
+                includeTeamDriveItems=True,
+                q=query,
+                spaces='drive',
+                pageSize=200,
+                fields='files(id, name, mimeType, size)',
+                orderBy='modifiedTime desc',
+            )
+            .execute()["files"]
+        )
 
 
     def edit_telegraph(self):
@@ -107,14 +112,12 @@ class GoogleDriveHelper:
     def drive_list(self, fileName):
         fileName = self.escapes(str(fileName))
         msg = ''
-        INDEX = -1
         content_count = 0
         add_title_msg = True
-        for parent_id in DRIVE_ID :
-            response = self.drive_query(parent_id, fileName)    
-            INDEX += 1          
+        for INDEX, parent_id in enumerate(DRIVE_ID):
+            response = self.drive_query(parent_id, fileName)
             if response:
-                if add_title_msg == True:
+                if add_title_msg:
                     msg = f'<h3>Search Results for : {fileName}</h3>'
                     add_title_msg = False
                 msg += f"————————————<br><b>{DRIVE_NAME[INDEX]}</b><br>————————————<br>"
@@ -158,12 +161,12 @@ class GoogleDriveHelper:
                                                 author_url=BOT_SOURCE_CODE,
                                                 html_content=content )['path'])
 
-        self.num_of_path = len(self.path)      
+        self.num_of_path = len(self.path)
         if self.num_of_path > 1:
             self.edit_telegraph()
 
         msg = f"<b>Found {content_count} results for <i>{fileName}</i></b>"
-        buttons = button_builder.ButtonMaker()   
+        buttons = button_builder.ButtonMaker()
         buttons.buildbutton("🔎 VIEW", f"https://telegra.ph/{self.path[0]}")
 
         return msg, InlineKeyboardMarkup(buttons.build_menu(1))
